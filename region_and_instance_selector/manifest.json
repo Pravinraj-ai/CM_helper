@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "region_and_instance_selector",
+  "version": "1.0",
+  "description": "select region and low cost instance",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Run Script",
+    "default_icon": {
+      "66": "icon.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["config.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "66": "icon.png"
+  }
+}
+
+

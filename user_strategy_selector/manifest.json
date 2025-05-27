@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "user_startegy_cm",
+  "version": "1.0",
+  "description": "Selects User Migration User Migration Strategy",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Run Script",
+    "default_icon": {
+      "78": "UMS.png"
+    }
+  },
+  "icons": {
+    "78": "UMS.png"
+  }
+}
+

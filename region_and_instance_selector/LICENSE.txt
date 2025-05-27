@@ -1,0 +1,18 @@
+Custom Internal License - Pravin Raj (perumalpravinraj@gmail.com) - 2025
+
+This software ("the Code") was developed by Pravin Raj exclusively for internal use within TRIANZ ("the Organization").
+
+Usage Terms:
+1. This Code is strictly intended for use within the Organization’s internal systems and is not authorized for public distribution, replication, or commercial resale.
+2. Any copying, transferring, or sharing of this Code outside the Organization is strictly prohibited.
+3. The Code is provided “as is” without any warranties or guarantees of any kind.
+
+Ownership & Liability:
+1. Pravin Raj retains authorship of the Code. No other party should claim authorship of the Code without proper approval.
+2. The Code was created with the intent to optimize internal workflows and improve task automation.
+3. The author shall not be held responsible for any unintended consequences, damages, or misuse of the Code, including data loss or operational disruption.
+4. If the Organization uses, modifies, or deploys this Code, it does so at its own risk.
+
+By using or deploying this Code, you agree to these terms.
+
+© 2025 Pravin Raj. All rights reserved.
