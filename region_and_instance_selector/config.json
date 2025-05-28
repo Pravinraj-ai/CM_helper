@@ -19,7 +19,7 @@
               "these are examples, refer below and add double quoates without fail to maintain json formatting"
             ],
 
-  "series": "m5a",
-  "region": "us-east-2",
-  "cost": "reserved_1year"
+  "series": "t3a,c6a,m5a,r5a",
+  "region": "us-west-2",
+  "cost": "reserved_3year"
 }

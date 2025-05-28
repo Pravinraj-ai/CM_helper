@@ -11,15 +11,29 @@
 * License: Internal use only - see LICENSE.txt for details.
 
 */
+let strategyMap = {};
+
+fetch(chrome.runtime.getURL("strategies.csv"))
+  .then(response => response.text())
+  .then(text => {
+    text.split("\n").forEach(line => {
+      let [id, strategy] = line.trim().split(",");
+      if (id && strategy) {
+        strategyMap[id.trim()] = strategy.trim();
+      }
+    });
+    console.log("Loaded strategy map:", strategyMap);
+});
 
 chrome.action.onClicked.addListener((tab) => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    function: autoFillFirstInput
+    function: autoFillFirstInput,
+    args: [strategyMap] 
   });
 });
 
-function autoFillFirstInput() {
+function autoFillFirstInput(strategyMap) {
   document.querySelectorAll('tbody tr').forEach((row, index) => {
     setTimeout(() => {
       let editButton = row.querySelector('td:last-child img');
@@ -33,11 +47,12 @@ function autoFillFirstInput() {
 
       setTimeout(() => {
 
-        let previousStrategyCell = row.querySelector('td:nth-child(8)');
+        let previousStrategyCell = row.querySelector('td:nth-child(4)');
         let strategyText = previousStrategyCell ? previousStrategyCell.innerText.trim() : null;
-	if (strategyText === "Replatform") {
-    	  strategyText = "Re-Platform";
- 	}
+        strategyText = strategyMap[strategyText];
+        if (strategyText === "Replatform") {
+              strategyText = "Re-Platform";
+        }
 
         let selectElement = row.querySelector('td:nth-child(9) select');
 

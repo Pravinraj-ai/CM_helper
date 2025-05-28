@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "user_startegy__csv_cm",
+  "version": "1.0",
+  "description": "Selects User Migration User Migration Strategy",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["strategies.csv"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_title": "Run Script",
+    "default_icon": {
+      "78": "UMS.png"
+    }
+  },
+  "icons": {
+    "78": "UMS.png"
+  }
+}
+
