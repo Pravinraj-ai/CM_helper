@@ -31,6 +31,8 @@ chrome.action.onClicked.addListener(async(tab) => {
   const config = await fetch(chrome.runtime.getURL("config.json")).then(res => res.json());
   const region = config.region;
   const cost = config.cost;
+  const series = config.series;
+	
 
   if (region){
     await chrome.scripting.executeScript({
