@@ -55,6 +55,7 @@ function autoFillFirstInput(strategyMap) {
       if (editButton) {
         editButton.click();
         console.log(`Clicked edit button for row ${index + 1}`);
+	row.scrollIntoView({ behavior: "smooth", block: "center" });
       } else {
         console.log(`Edit button not found for row ${index + 1}`);
         return;
