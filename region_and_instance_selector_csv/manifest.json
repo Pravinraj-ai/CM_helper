@@ -1,27 +1,28 @@
 {
   "manifest_version": 3,
-  "name": "user_startegy__csv_cm",
+  "name": "region_and_instance_selector",
   "version": "1.0",
-  "description": "Selects User Migration User Migration Strategy",
+  "description": "select region and low cost instance",
   "permissions": ["scripting", "activeTab"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
-  "web_accessible_resources": [
-    {
-      "resources": ["strategies.csv"],
-      "matches": ["<all_urls>"]
-    }
-  ],
   "action": {
     "default_title": "Run Script",
     "default_icon": {
-      "1024": "icon.png"
+      "1024" : "icon.png"
     }
   },
   "icons": {
     "1024": "icon.png"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["config.json","strategies.csv"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
+
 

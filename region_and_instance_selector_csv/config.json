@@ -1,0 +1,25 @@
+{
+  "_comment" :["These are the available regions that can be used",
+
+              "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", 
+              "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", 
+              "ap-southeast-3", "ap-southeast-4", "ap-southeast-5", "ap-southeast-7", 
+              "ca-central-1", "ca-west-1", "eu-central-1", "eu-central-2", "eu-north-1", 
+              "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", 
+              "mx-central-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2",
+            
+              "Formatting:",
+
+              "For Single Series selection- series: t3a",
+              "For Multi Series Selection- series: t3a,m5a,c5a",
+              "For all family- series: all",
+              "For region- region: us-east-1",
+              "For cost selection- cost: reserved_1year or reserved_3year or ondemand_plan",
+
+              "these are examples, refer below and add double quoates without fail to maintain json formatting"
+            ],
+
+  "series": "t3a,c6a,m5a,r5a",
+  "region": "us-west-2",
+  "cost": "reserved_3year"
+}

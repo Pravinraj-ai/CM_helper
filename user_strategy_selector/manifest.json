@@ -11,11 +11,11 @@
   "action": {
     "default_title": "Run Script",
     "default_icon": {
-      "78": "UMS.png"
+      "1024": "icon.png"
     }
   },
   "icons": {
-    "78": "UMS.png"
+    "1024": "icon.png"
   }
 }
 

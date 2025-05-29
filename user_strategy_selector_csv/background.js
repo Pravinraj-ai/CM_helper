@@ -11,25 +11,40 @@
 * License: Internal use only - see LICENSE.txt for details.
 
 */
-let strategyMap = {};
 
-fetch(chrome.runtime.getURL("strategies.csv"))
-  .then(response => response.text())
-  .then(text => {
+
+let strategyMap = null;
+
+async function loadStrategyMap() {
+  if (strategyMap !== null) return strategyMap;
+
+  try {
+    const response = await fetch(chrome.runtime.getURL("strategies.csv"));
+    const text = await response.text();
+    strategyMap = {};
+
     text.split("\n").forEach(line => {
-      let [id, strategy] = line.trim().split(",");
+      const [id, strategy] = line.trim().split(",");
       if (id && strategy) {
         strategyMap[id.trim()] = strategy.trim();
       }
     });
-    console.log("Loaded strategy map:", strategyMap);
-});
 
-chrome.action.onClicked.addListener((tab) => {
+    console.log("Strategy map loaded:", strategyMap);
+    return strategyMap;
+  } catch (error) {
+    console.error("Error loading strategy map:", error);
+    return {};
+  }
+}
+
+chrome.action.onClicked.addListener(async (tab) => {
+  const strategyMap = await loadStrategyMap();
+
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
     function: autoFillFirstInput,
-    args: [strategyMap] 
+    args: [strategyMap]
   });
 });
 
@@ -65,8 +80,7 @@ function autoFillFirstInput(strategyMap) {
           console.log(`Dropdown or strategy text not found for row ${index + 1}`);
           return;
         }
-
-
+        
         let commentBox = row.querySelector('td:nth-child(10) textarea');
         if (commentBox) {
           commentBox.removeAttribute('disabled'); 
